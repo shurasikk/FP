@@ -8,7 +8,13 @@ let Check s =
 
 [<EntryPoint>]
 let main argv =
+    let Checking s =
+        if (s="F#"||s="Prolog") then "Вы подлиза!"
+        else "Спасибо за ответ!"
     Console.WriteLine("Пожалуйста, введите ваш любимый язык программирования:")
-    let s=Console.ReadLine()
-    Console.WriteLine(Check s)
+    (*суперпозиция*)
+    let answer read check_func write=write(check_func(read()))
+    answer  Console.ReadLine Checking Console.WriteLine
+    (*каррирование*)
+    //(Console.ReadLine>>Checking>>Console.WriteLine)()
     0
