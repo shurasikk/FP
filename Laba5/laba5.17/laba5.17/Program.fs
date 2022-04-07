@@ -1,16 +1,18 @@
 ﻿open System
 
 let rec nod a b =
-    if a<>0 && b <>0 then 
-                    if a>b then nod (a%b) b 
-                    else nod a (b%a)
-    else 
+    match a with
+    |_ when a<>0 && b <>0 ->
+                        if a>b then nod (a%b) b 
+                        else nod a (b%a)
+    |_->
         a+b
 //обход делителей с условием
 let obhod_casual x predicate f init =
     let rec func x init number =
-        if number = 1 then init
-        else 
+        match number with
+        |1->init
+        |_->
             let newinit = if predicate number=true && x%number=0 then (f init number) else init
             let newnumber = number - 1
             func x newinit newnumber
@@ -20,8 +22,9 @@ let obhod_casual x predicate f init =
 
 let obhod_prost x predicate f init =
     let rec func x init number =
-        if number = 1 then init
-        else 
+        match number with
+        |1->init
+        |_->
             let newinit = if predicate number=true && nod x number=1 then (f init number) else init
             let newnumber = number - 1
             func x newinit newnumber
