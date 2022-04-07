@@ -31,10 +31,43 @@ let f2 n=
             f22 newn newmax
     f22 n 0
 
+let rec sumcifr n=
+    match n with
+    |0->0 
+    |_->
+        if n%10>=5 then sumcifr (n/10)
+        else n%10+sumcifr (n/10)
+
+let mind n=
+    let rec minimumd n number=
+        match number with
+        |n->number
+        |_->
+            if n%number=0 then number
+            else 
+                let newnumber=number+1
+                minimumd n newnumber
+    minimumd n 2
+
+let f3 n=
+    let rec f33 n number=
+        match number with 
+        |1->number 
+        |_->
+            if (nod n number) <> 1 then number
+            else
+            let newnum = number-1
+            f33 n newnum
+    f33 n (n-1)
+
 [<EntryPoint>]
 let main argv =
     let n=Convert.ToInt32(Console.ReadLine())
     Console.WriteLine("Количество четных чисел, не взаимно простых с данным: {0}", f1 n 0)
     let x=Convert.ToInt32(Console.ReadLine())
     Console.WriteLine("Максимальная цифра числа, не делящаяся на 3: {0}", f2 x)
+    let y=Convert.ToInt32(Console.ReadLine())
+    Console.WriteLine("Произведение максимального числа, не взаимно простого
+    с данным, не делящегося на наименьший делитель исходно числа, и
+    суммы цифр числа, меньших 5: {0}", (f3 y)*(sumcifr y))
     0 // return an integer exit code
