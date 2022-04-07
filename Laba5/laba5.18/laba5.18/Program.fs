@@ -19,8 +19,22 @@ let f1 n init=
             f11 n newinit newnum
     f11 n init (n-1)
 
+let f2 n=
+    let rec f22 n max=
+        match n with
+        |_ when n<10->max
+        |_ ->
+            let newn=n/10
+            let newmax=
+                if n%10>max && n%3<>0 then n%10
+                else max
+            f22 newn newmax
+    f22 n 0
+
 [<EntryPoint>]
 let main argv =
     let n=Convert.ToInt32(Console.ReadLine())
     Console.WriteLine("Количество четных чисел, не взаимно простых с данным: {0}", f1 n 0)
+    let x=Convert.ToInt32(Console.ReadLine())
+    Console.WriteLine("Максимальная цифра числа, не делящаяся на 3: {0}", f2 x)
     0 // return an integer exit code
