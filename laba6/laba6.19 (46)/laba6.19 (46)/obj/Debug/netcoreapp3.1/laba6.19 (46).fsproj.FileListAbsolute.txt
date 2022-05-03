@@ -1,0 +1,27 @@
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\laba6.19 (46).exe
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\laba6.19 (46).deps.json
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\laba6.19 (46).runtimeconfig.json
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\laba6.19 (46).runtimeconfig.dev.json
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\laba6.19 (46).dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\laba6.19 (46).pdb
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\FSharp.Core.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\cs\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\de\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\es\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\fr\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\it\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\ja\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\ko\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\pl\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\pt-BR\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\ru\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\tr\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\zh-Hans\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\bin\Debug\netcoreapp3.1\zh-Hant\FSharp.Core.resources.dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\obj\Debug\netcoreapp3.1\laba6.19 (46).fsprojAssemblyReference.cache
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\obj\Debug\netcoreapp3.1\laba6.19 (46).AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\obj\Debug\netcoreapp3.1\laba6.19 (46).AssemblyInfo.fs
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\obj\Debug\netcoreapp3.1\laba6.19 (46).fsproj.CopyComplete
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\obj\Debug\netcoreapp3.1\laba6.19 (46).dll
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\obj\Debug\netcoreapp3.1\laba6.19 (46).pdb
+C:\Users\Asus\Documents\GitHub\FP\laba6\laba6.19 (46)\laba6.19 (46)\obj\Debug\netcoreapp3.1\laba6.19 (46).genruntimeconfig.cache
