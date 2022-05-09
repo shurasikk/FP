@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "KOQs+stXi5FJKixi/itf+SUZRSig2UaBy4ltlS3vBy5o6qgo+t83dxCv3oyI4jpUPzMdKOTQA4ApKK5ALVWCWw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Asus\\Documents\\GitHub\\FP\\laba7\\laba7.16 (54)\\laba7.16 (54)\\laba7.16 (54).fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
