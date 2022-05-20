@@ -81,10 +81,15 @@ down_proiz_cifr(X,Y,Res):-X>=10, X1 is X div 10, Y1 is Y*(X mod 10),down_proiz_c
 down_mult(X):-down_proiz_cifr(X,1,Res),!.
 
 %17 zadaniye
-%max_not_div3(X,Y):-
-minCifr(0,99) :- !.
-minCifr(X,Y) :-
-    X1 is X div 10,
-    minCifr(X1,Y1),
-    Y2 is X mod 10,
-    (Y2<Y1, Y2 mod 2 =\=0 -> Y is Y2; Y is Y1).
+max_not_div3(0,-1):-!.
+max_not_div3(X,Y):-X1 is X div 10, max_not_div3(X1, C1),
+    C2 is X mod 10, (C2>C1, C2 mod 3 =\= 0, Y is C2; Y is C1).
+
+%18 zadaniye
+maxD_not_div3(0,CurMax,Max):-Max is CurMax,!.
+maxD_not_div3(X,CurMax,Max):- X1 is X div 10, M is X mod 10,
+    (M>CurMax,M mod 3 =\= 0,maxD_not_div3(X1,M,Max);maxD_not_div3(X1,CurMax,Max)).
+maxD_not_div3(X,Max):-maxD_not_div3(X,-1,Max).
+
+
+

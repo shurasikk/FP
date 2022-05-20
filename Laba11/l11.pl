@@ -85,5 +85,11 @@ max_not_div3(0,-1):-!.
 max_not_div3(X,Y):-X1 is X div 10, max_not_div3(X1, C1),
     C2 is X mod 10, (C2>C1, C2 mod 3 =\= 0, Y is C2; Y is C1).
 
+%18 zadaniye
+maxD_not_div3(0,CurMax,Max):-Max is CurMax,!.
+maxD_not_div3(X,CurMax,Max):- X1 is X div 10, M is X mod 10,
+    (M>CurMax,M mod 3 =\= 0,maxD_not_div3(X1,M,Max);maxD_not_div3(X1,CurMax,Max)),!.
+maxD_not_div3(X,Max):-maxD_not_div3(X,-1,Max).
+
 
 
