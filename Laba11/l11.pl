@@ -65,7 +65,9 @@ wife(X,Y):-woman(X),parent(X,Z),parent(Y,Z),nl.
 wife(X):-wife(X,Y), write(X), nl,!.
 
 %13 zadaniye
-grand_ma(X, Y):-woman(X),parent(X,Z),parent(Z,Y).
+grand_ma(X, Y):-woman(X),parent(X,Z),parent(Z,Y),!.
 grand_mas(X):-grand_ma(X,Y),write(X),nl.
 
+%14 zadaniye
+grand_ma_and_son(X,Y):-grand_ma(X,Y),man(Y),!;man(X),grand_ma(Y,X),!.
 
