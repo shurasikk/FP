@@ -91,5 +91,9 @@ maxD_not_div3(X,CurMax,Max):- X1 is X div 10, M is X mod 10,
     (M>CurMax,M mod 3 =\= 0,maxD_not_div3(X1,M,Max);maxD_not_div3(X1,CurMax,Max)),!.
 maxD_not_div3(X,Max):-maxD_not_div3(X,-1,Max).
 
+%19 zadaniye
+fib(1,1):-!.
+fib(2,1):-!.
+fib(N,X):-N1 is N-1, N2 is N-2, fib(N1, X1), fib(N2,X2), X is X1+X2,!.
 
 
