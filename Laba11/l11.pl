@@ -71,3 +71,8 @@ grand_mas(X):-grand_ma(X,Y),write(X),nl.
 %14 zadaniye
 grand_ma_and_son(X,Y):-grand_ma(X,Y),man(Y),!;man(X),grand_ma(Y,X),!.
 
+%15 zadaniye
+proiz_cifr(X,Y):-X<10, Y is X mod 10, !.
+proiz_cifr(X,Y):-X>=10, X1 is X div 10, proiz_cifr(X1,P), Y is (X mod 10)*P,!.
+
+
