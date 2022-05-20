@@ -96,4 +96,10 @@ fib(1,1):-!.
 fib(2,1):-!.
 fib(N,X):-N1 is N-1, N2 is N-2, fib(N1, X1), fib(N2,X2), X is X1+X2,!.
 
+%20 zadaniye
+fibD(N,X):- fibD(1,1,N,X,2),!.
+fibD(F1,F2,N,X,C):- C<N,Fn1 is F2, Fn2 is F1+F2,
+    C1 is C+1, fibD(Fn1,Fn2,N,X,C1),!.
+fibD(_,F,N,X,N):- X is F,!.
+
 
