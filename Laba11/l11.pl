@@ -75,4 +75,7 @@ grand_ma_and_son(X,Y):-grand_ma(X,Y),man(Y),!;man(X),grand_ma(Y,X),!.
 proiz_cifr(X,Y):-X<10, Y is X mod 10, !.
 proiz_cifr(X,Y):-X>=10, X1 is X div 10, proiz_cifr(X1,P), Y is (X mod 10)*P,!.
 
-
+%16 zadaniye
+down_proiz_cifr(X,Y,Res):-X<10, Y1 is Y*(X mod 10), Res is Y1,write(Res),!.
+down_proiz_cifr(X,Y,Res):-X>=10, X1 is X div 10, Y1 is Y*(X mod 10),down_proiz_cifr(X1,Y1,Res),!.
+down_mult(X):-down_proiz_cifr(X,1,Res),!.
