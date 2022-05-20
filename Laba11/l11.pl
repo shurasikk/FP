@@ -79,3 +79,11 @@ proiz_cifr(X,Y):-X>=10, X1 is X div 10, proiz_cifr(X1,P), Y is (X mod 10)*P,!.
 down_proiz_cifr(X,Y,Res):-X<10, Y1 is Y*(X mod 10), Res is Y1,write(Res),!.
 down_proiz_cifr(X,Y,Res):-X>=10, X1 is X div 10, Y1 is Y*(X mod 10),down_proiz_cifr(X1,Y1,Res),!.
 down_mult(X):-down_proiz_cifr(X,1,Res),!.
+
+%17 zadaniye
+max_not_div3(0,-1):-!.
+max_not_div3(X,Y):-X1 is X div 10, max_not_div3(X1, C1),
+    C2 is X mod 10, (C2>C1, C2 mod 3 =\= 0, Y is C2; Y is C1).
+
+
+
