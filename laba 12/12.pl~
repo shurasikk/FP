@@ -53,5 +53,13 @@ find_ind([],_,_,_):- false.
 find_ind([H|T],N,I,V):-I is N,V is H;I1 is I+1,find_ind(T,N,I1,V).
 find_ind([H|T],N,V):-find_ind([H|T],N,0,V),!.
 
+check_ind([H|T],N):-find_max([H|T],M),find_ind([H|T],N,M).
+
+%17 zadaniye (14)
+count_interval([],_,_,C,C).
+count_interval([H|T],A,B,C,Count):-((A<H,B>H),C1 is Count+1;C1 is Count),
+    count_interval(T,A,B,C,C1).
+count_interval(List,A,B,C):-count_interval(List,A,B,C,0),!.
+
 
 
