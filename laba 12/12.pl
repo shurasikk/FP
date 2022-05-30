@@ -14,3 +14,20 @@ count_up(_,1,0).
 count_up(X,Y,Count):-NY is Y-1, count_up(X,NY,NCount),
     (not(prime(X,Y)),0 is Y mod 2, Count is NCount+1; Count is NCount),!.
 count_up(X,Y):-C is X-1, count_up(X,C,Y).
+
+%12 zadaniye
+mindel(X,X,Z):-Z is X,!.
+mindel(X,Y,Z):- 0 is X mod Y,Z is Y;Y1 is Y + 1,mindel(X,Y1,Z).
+mindel(X,Y):-mindel(X,2,Y),!.
+
+max_notprime(X,Y):-X1 is X-1,mindel(X,D),max_notprime(X,X1,D,Y).
+max_notprime(_,1,_1):-!.
+max_notprime(X,I,D,Y):-I mod D =\= 0, not(prime(X,I)), Y is I;
+I1 is I-1, max_notprime(X,I1,D,Y),!.
+
+sumcifr(0,0):-!.
+sumcifr(X,Y):-X1 is X div 10, sumcifr(X1,Y1),
+     (P is X mod 10, P<5, Y is Y1+P;Y is Y1),!.
+
+mult(X,Y):-max_notprime(X,D),sumcifr(X,S),Y is D*S.
+
