@@ -31,3 +31,9 @@ sumcifr(X,Y):-X1 is X div 10, sumcifr(X1,Y1),
 
 mult(X,Y):-max_notprime(X,D),sumcifr(X,S),Y is D*S.
 
+%14 zadaniye
+lengthlist([],0):-!.
+lengthlist([_|T], L) :- length(T,I), L is I + 1.
+
+
+
