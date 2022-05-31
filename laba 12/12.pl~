@@ -61,5 +61,34 @@ count_interval([H|T],A,B,C,Count):-((A<H,B>H),C1 is Count+1;C1 is Count),
     count_interval(T,A,B,C,C1).
 count_interval(List,A,B,C):-count_interval(List,A,B,C,0),!.
 
+%16 zadaniye (4)
+% найти индекс максимального элемента
+find_ind_max([],_,MC,_,MC).
+find_ind_max([H|T],M,MC,IND,Res):-(H>M,MAX is H,MAXC is IND;MAX is M, MAXC is MC),
+    IND1 is IND+1,find_ind_max(T,MAX,MAXC,IND1,Res).
+find_ind_max([H|T],Res):-find_ind_max(T,H,0,1,Res),!.
+
+% удаление элемента по индексу
+del([],_,_,_).
+del([_|T],C,C,T).
+del([H|T],IND,C,[H|L]):-IND1 is IND+1,del(T,IND1,C,L),!.
+del([H|T],C,A):-del([H|T],0,C,A).
+
+% отсортировать список по убыванию
+sorted([],_):-!.
+sorted([H|T],[L|T1]):-find_max([H|T],L),find_ind_max([H|T],M),del([H|T],M,NL),
+    sorted(NL,T1),!.
+
+% найти индекс элемента
+find_el([],_,_,A):-A is -1,false.
+find_el([H|T],IND,EL,A):-EL is H,A is IND,true;IND1 is IND+1,find_el(T,IND1,EL,A).
+find_el([H|T],EL,A):-find_el([H|T],0,EL,A),!.
+
+% найти список индексов элементов, образующих убывающую последовательность
+sorted_ind([],_,_).
+sorted_ind([H|T],LST,[H1|T1]):-find_el(LST,H,H1),sorted_ind(T,LST,T1).
+sorted_ind(LIST,OUTPUT):-sorted(LIST,SCND),sorted_ind(SCND,LIST,OUTPUT),!.
+
+
 
 
