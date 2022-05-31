@@ -121,9 +121,6 @@ find_in_interval([H|T],I1,I2,I1,[H|NewList]):-IN is I1+1, NI is I1+1,
 between_two_max(List,NewList):-find_max(List,MAX1),second_max(List,MAX2),
 find_el(List,MAX1,I1),find_el(List,MAX2,I2), I11 is I1+1,
     find_in_interval(List,I11,I2,0,NewList).
-kratnoK([],_,[]).
-kratnoK([H|T], K, [H|TN]) :- Z is (H mod K), Z is 0, kratnoK(T, K, TN).
-kratnoK([_|T], K, TN) :- kratnoK(T, K, TN).
 
 
 
