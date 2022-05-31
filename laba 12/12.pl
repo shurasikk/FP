@@ -128,6 +128,17 @@ find_interval_max([H|T],A,B,I,M,Max):-((A=<I,B>=I,H>M),M1 is H;M1 is M),
     I1 is I+1,find_interval_max(T,A,B,I1,M1,Max).
 find_interval_max([H|T],A,B,Max):-find_interval_max(T,A,B,1,H,Max),!.
 
+%20 zadaniye (28)
+find_ind_secondmax([],_,MC,_,MC).
+find_ind_secondmax([H|T],M,MC,IND,Res):-(H>=M,MAX is H,MAXC is IND;MAX is M, MAXC is MC),
+    IND1 is IND+1,find_ind_secondmax(T,MAX,MAXC,IND1,Res).
+find_ind_secondmax([H|T],Res):-find_ind_secondmax(T,H,0,1,Res),!.
+
+between_first_last_max(List,NewList):-find_ind_max(List,I1),
+    find_ind_secondmax(List,I2), find_in_interval(List,I1,I2,0,NewList).
+
+
+
 
 
 

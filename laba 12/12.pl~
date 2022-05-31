@@ -122,6 +122,12 @@ between_two_max(List,NewList):-find_max(List,MAX1),second_max(List,MAX2),
 find_el(List,MAX1,I1),find_el(List,MAX2,I2), I11 is I1+1,
     find_in_interval(List,I11,I2,0,NewList).
 
+%19 zadaniye (25)
+find_interval_max([],_,_,_,Max,Max).
+find_interval_max([H|T],A,B,I,M,Max):-((A=<I,B>=I,H>M),M1 is H;M1 is M),
+    I1 is I+1,find_interval_max(T,A,B,I1,M1,Max).
+find_interval_max([H|T],A,B,Max):-find_interval_max(T,A,B,1,H,Max),!.
+
 
 
 
