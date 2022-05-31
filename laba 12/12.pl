@@ -105,6 +105,23 @@ polynom(B,C,M,PR,V):-THS is 1000,count(B,C,M1),(M1 > M,(MAX is M1,NPR is B*C);
 
 find(V):-polynom(-999,-999,0,0,V).
 
+%18 zadaniye (16)
+second_max(List,L):-find_max(List,_),find_ind_max(List,I),del(List,I,List1),
+    find_max(List1,L),!.
+
+
+find_in_interval(_,I2,I2,I2,[]):-!.
+find_in_interval([H|T],I1,I2,I,NewList):-NI is I+1,
+    find_in_interval(T,I1,I2,NI,NewList).
+find_in_interval([H|T],I1,I2,I1,[H|NewList]):-IN is I1+1, NI is I1+1,
+    find_in_interval(T,IN,I2,NI,NewList).
+
+
+
+between_two_max(List,NewList):-find_max(List,MAX1),second_max(List,MAX2),
+find_el(List,MAX1,I1),find_el(List,MAX2,I2), I11 is I1+1,
+    find_in_interval(List,I11,I2,0,NewList).
+
 
 
 

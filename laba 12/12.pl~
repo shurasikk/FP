@@ -91,16 +91,39 @@ prost(X,X):- true,!.
 prost(X,Y):- X>Y, 0 is X mod Y -> false;Y1 is Y+1,prost(X,Y1).
 prost(X):- X>1,prost(X,2),!;false,!.
 
-count(B,C,CNT,N,Z):-NM is (N*N+B*N+C),(prost(NM),NCNT is CNT+1,NN is N+1,count(B,C,NCNT,NN,Z);Z is CNT),!.
+count(B,C,CNT,N,Z):-NM is (N*N+B*N+C),(prost(NM),NCNT is CNT+1,NN is N+1,
+                                       count(B,C,NCNT,NN,Z);Z is CNT),!.
 count(B,C,Z):-count(B,C,0,0,Z).
 
 
-polynom(999,999,M,PR,V):- count(999,999,M1),(M1>M,NPR is 999*999;NPR is PR),V is NPR,!.
-polynom(B,C,M,PR,V):-THS is 1000,count(B,C,M1),(M1 > M,(MAX is M1,NPR is B*C);MAX is M,
-                                                NPR is PR),(THS > C,(C1 is C+1,B1 is B);B1 is B+1,C1 is -999),
+polynom(999,999,M,PR,V):- count(999,999,M1),(M1>M,NPR is 999*999;NPR is PR),
+    V is NPR,!.
+polynom(B,C,M,PR,V):-THS is 1000,count(B,C,M1),(M1 > M,(MAX is M1,NPR is B*C);
+                                               MAX is M,
+    NPR is PR),(THS > C,(C1 is C+1,B1 is B);B1 is B+1,C1 is -999),
     polynom(B1,C1,MAX,NPR,V).
 
 find(V):-polynom(-999,-999,0,0,V).
+
+%18 zadaniye (16)
+second_max(List,L):-find_max(List,_),find_ind_max(List,I),del(List,I,List1),
+    find_max(List1,L),!.
+
+
+find_in_interval(_,I2,I2,I2,[]):-!.
+find_in_interval([H|T],I1,I2,I,NewList):-NI is I+1,
+    find_in_interval(T,I1,I2,NI,NewList).
+find_in_interval([H|T],I1,I2,I1,[H|NewList]):-IN is I1+1, NI is I1+1,
+    find_in_interval(T,IN,I2,NI,NewList).
+
+
+
+between_two_max(List,NewList):-find_max(List,MAX1),second_max(List,MAX2),
+find_el(List,MAX1,I1),find_el(List,MAX2,I2), I11 is I1+1,
+    find_in_interval(List,I11,I2,0,NewList).
+kratnoK([],_,[]).
+kratnoK([H|T], K, [H|TN]) :- Z is (H mod K), Z is 0, kratnoK(T, K, TN).
+kratnoK([_|T], K, TN) :- kratnoK(T, K, TN).
 
 
 
