@@ -27,6 +27,20 @@ let sortfirst (strings:'string list) =
     let sorted = List.sortBy (fun x-> pown ((AverageWeight x) - firstStringWeight) 2) strings.Tail
     writeList (sorted)
 
+let isVowel (x : char) =
+    (x = 'а') || (x = 'и') || (x = 'е') || (x = 'ё') || (x = 'о') || (x = 'у') || (x = 'ы') || (x = 'э') || (x = 'ю') || (x = 'я') || (x = 'u') || (x = 'i') || (x = 'o')
+
+let counts x y =
+    if (isVowel (snd y)) && (not (isVowel (fst y))) then x + 1
+        else if (isVowel (fst y)) && (not(isVowel(snd y))) then x - 1
+                else x
+
+let countSoch str =
+    let pairList = Seq.pairwise str
+    Seq.fold counts 0 pairList
+
+let sortsecond (strings:'string list)=
+    Seq.toList (Seq.sortBy countSoch strings)
 
 
 [<EntryPoint>]
