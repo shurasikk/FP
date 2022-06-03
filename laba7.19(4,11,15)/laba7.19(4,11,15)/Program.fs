@@ -15,6 +15,12 @@ let CountWords (str:string)=
     let k=Array.length strnew
     k
 
+let Differentcounts (str:string)=
+    let arr_cifr=str.ToCharArray()
+    let diff_arr=Array.distinct arr_cifr
+    let k=Array.length diff_arr
+    k
+
 [<EntryPoint>]
 let main argv =
     printfn "Hello World from F#!"
