@@ -50,7 +50,7 @@ let buildthree list=
 
 [<EntryPoint>]
 let main argv =
-    //let list=[3; 4; 5; 21; 20; 29; 36; 11; 22]
+    //let list=[3!; 4!; 5!; 21!; 20!; 29!; 36; 11; 22]
     let list=readData
     let sortlist= buildthree list
     writethreeList (sortlist)
