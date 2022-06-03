@@ -17,7 +17,7 @@ let checkList (list:float32 list) =
     let rec checking list=
         match list with
         |h::t->
-            if ((fst (h)=1 && snd(h)=0) || (fst(h)=1 && snd(h)=0)) then checking t
+            if ((fst (h)=1 && snd(h)=0) || (fst(h)=0 && snd(h)=1)) then checking t
             else false
         |[]->true
     let p=checking pairList
