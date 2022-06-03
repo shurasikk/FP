@@ -21,7 +21,18 @@ let Differentcounts (str:string)=
     let k=Array.length diff_arr
     k
 
+let choosing k (str:string)=
+    match k with
+    |1->Console.WriteLine(checkPalindrome(str))
+    |2->Console.WriteLine(CountWords(str))
+    |3->Console.WriteLine(Differentcounts(str))
+    |_->Console.WriteLine("Команды под данным номером не существует, нажмите 1,2 или 3")
+
+
 [<EntryPoint>]
 let main argv =
-    printfn "Hello World from F#!"
+    let str=Console.ReadLine()
+    Console.WriteLine("Нажмите цифру 1, 2 или 3 (1-является ли слово палиндромом, 2-количество слов, разделённых пробелом, 3-количество различных цифр числа")
+    let k=Convert.ToInt32(Console.ReadLine())
+    choosing k str
     0 // return an integer exit code
