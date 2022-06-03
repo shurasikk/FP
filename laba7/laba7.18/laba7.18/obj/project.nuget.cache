@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "frEILJeFxK9pIgmq959r5pDsZfd6BqcLxSmWSWiBhbB45ITrEdOEyQB4bQWNOMzlreDYArhaFqslLFoDWFxlhA==",
+  "dgSpecHash": "U5auFhthbVJjXuxJpW2lrN+LrdE9dH3k3zxqW/Uqd9Iq58VQ8AfKOfeL+7jeX16lQvbquZkhxf0wKzve2atZvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\Documents\\GitHub\\FP\\laba7.18\\laba7.18\\laba7.18.fsproj",
+  "projectFilePath": "C:\\Users\\Asus\\Documents\\GitHub\\FP\\laba7\\laba7.18\\laba7.18\\laba7.18.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
   ],

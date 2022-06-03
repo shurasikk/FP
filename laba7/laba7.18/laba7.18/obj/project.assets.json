@@ -94,11 +94,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Documents\\GitHub\\FP\\laba7.18\\laba7.18\\laba7.18.fsproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Documents\\GitHub\\FP\\laba7\\laba7.18\\laba7.18\\laba7.18.fsproj",
       "projectName": "laba7.18",
-      "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\FP\\laba7.18\\laba7.18\\laba7.18.fsproj",
+      "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\FP\\laba7\\laba7.18\\laba7.18\\laba7.18.fsproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\Documents\\GitHub\\FP\\laba7.18\\laba7.18\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Documents\\GitHub\\FP\\laba7\\laba7.18\\laba7.18\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
