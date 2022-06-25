@@ -34,3 +34,13 @@ listPositive([H|T],Res,CurL):-(H>=0,add(H,CurL,NewL);add([],CurL,NewL)),
     listPositive(T,Res,NewL),!.
 
 list_p_and_n(X,Res):- listPositive(X,Pos), listNegative(X,Neg), append(Pos,Neg,Res),!.
+
+%13 zadaniye (52)
+prost(X,X):- true,!.
+prost(X,Y):- X>Y, 0 is X mod Y -> false;Y1 is Y+1,prost(X,Y1).
+prost(X):- X>1,prost(X,2),!;false,!.
+
+dividers(1,_,[]).
+dividers(N,P,[H|T]):-prost(P),0 is N mod P,N1 is N div P,H is P,
+    dividers(N1,2,T);P1 is P+1,dividers(N,P1,[H|T]).
+dividers(N,Res):-dividers(N,2,Res),!.
