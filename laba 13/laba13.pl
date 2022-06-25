@@ -1,4 +1,4 @@
-readlist(X,Y):-readlist([],X,0,Y).
+ readlist(X,Y):-readlist([],X,0,Y).
 readlist(A,A,G,G):-!.
 readlist(A,B,C,D):- C1 is C+1,read(X),append(A,[X],A1),readlist(A1,B,C1,D).
 
@@ -44,3 +44,17 @@ dividers(1,_,[]).
 dividers(N,P,[H|T]):-prost(P),0 is N mod P,N1 is N div P,H is P,
     dividers(N1,2,T);P1 is P+1,dividers(N,P1,[H|T]).
 dividers(N,Res):-dividers(N,2,Res),!.
+
+%14 zadaniye
+task14:-
+    Hair_colour = [_,_,_],
+    in_list(Hair_colour,[belokurov,_]),
+    in_list(Hair_colour,[chernov,_]),
+    in_list(Hair_colour,[ryzhov,_]),
+    in_list(Hair_colour,[_,blond]),
+    in_list(Hair_colour,[_,black]),
+    in_list(Hair_colour,[_,redhead]),
+    not(in_list(Hair_colour,[belokurov,blond])),
+    not(in_list(Hair_colour,[chernov,black])),
+    not(in_list(Hair_colour,[ryzhov,redhead])),
+    write(Hair_colour),!.
