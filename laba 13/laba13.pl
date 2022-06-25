@@ -76,3 +76,21 @@ task15:-
     not(in_list(Look,[valya,Y,Y])),
     not(in_list(Look,[natasha,Z,Z])),
     write(Look),!.
+
+%16 zadaniye
+task16:-
+    Friends = [_,_,_],
+    in_list(Friends,[slesar,_,youngest]),
+    in_list(Friends,[tokar,_,_]),
+    in_list(Friends,[svar,_,_]),
+    in_list(Friends,[_,borisov,has_sibling]),
+    in_list(Friends,[_,ivanov,_]),
+    in_list(Friends,[_,semenov,older]),
+    not(in_list(Friends,[slesar,_,older])),
+    not(in_list(Friends,[slesar,_,has_sibling])),
+    in_list(Friends,[slesar,Name1,_]),
+    in_list(Friends,[tokar,Name2,_]),
+    in_list(Friends,[svar,Name3,_]),
+    write("Слесарь - "), write(Name1),nl,
+    write("Токарь - "), write(Name2), nl,
+    write("Сварщик - "),write(Name3),!.

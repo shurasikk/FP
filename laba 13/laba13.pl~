@@ -62,17 +62,35 @@ task14:-
 %15 zadaniye
 task15:-
     Look = [_,_,_],
-    in_list(Look,[Natasha,_,green]),
-    in_list(Look,[Anya,X,X]),
-    in_list(Look,[Valya,_,_]),
+    in_list(Look,[natasha,_,green]),
+    in_list(Look,[anya,X,X]),
+    in_list(Look,[valya,_,_]),
     in_list(Look,[_,white,_]),
     in_list(Look,[_,green,_]),
     in_list(Look,[_,blue,_]),
     in_list(Look,[_,_,white]),
     in_list(Look,[_,_,green]),
     in_list(Look,[_,_,blue]),
-    not(in_list(Look,[Valya,white,_])),
-    not(in_list(Look,[Valya,_,white])),
-    not(in_list(Look,[Valya,Y,Y])),
-    not(in_list(Look,[Natasha,Z,Z])),
+    not(in_list(Look,[valya,white,_])),
+    not(in_list(Look,[valya,_,white])),
+    not(in_list(Look,[valya,Y,Y])),
+    not(in_list(Look,[natasha,Z,Z])),
     write(Look),!.
+
+%16 zadaniye
+task16:-
+    Friends = [_,_,_],
+    in_list(Friends,[slesar,_,youngest]),
+    in_list(Friends,[tokar,_,_]),
+    in_list(Friends,[svar,_,_]),
+    in_list(Friends,[_,borisov,has_sibling]),
+    in_list(Friends,[_,ivanov,_]),
+    in_list(Friends,[_,semenov,older]),
+    not(in_list(Friends,[slesar,_,older])),
+    not(in_list(Friends,[slesar,_,has_sibling])),
+    in_list(Friends,[Name1,slesar,_,_]),
+    in_list(Friends,[Name2,tokar,_,_]),
+    in_list(Friends,[Name3,svar,_,_]),
+    write("Слесарь - "), write(Name1),nl,
+    write("Токарь - "), write(Name2), nl,
+    write("Сварщик - "),write(Name3),!.
