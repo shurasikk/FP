@@ -1,4 +1,4 @@
- readlist(X,Y):-readlist([],X,0,Y).
+readlist(X,Y):-readlist([],X,0,Y).
 readlist(A,A,G,G):-!.
 readlist(A,B,C,D):- C1 is C+1,read(X),append(A,[X],A1),readlist(A1,B,C1,D).
 
@@ -46,7 +46,7 @@ dividers(N,P,[H|T]):-prost(P),0 is N mod P,N1 is N div P,H is P,
 dividers(N,Res):-dividers(N,2,Res),!.
 
 %14 zadaniye
-14task:-
+task14:-
     Hair_colour = [_,_,_],
     in_list(Hair_colour,[belokurov,_]),
     in_list(Hair_colour,[chernov,_]),
@@ -58,3 +58,21 @@ dividers(N,Res):-dividers(N,2,Res),!.
     not(in_list(Hair_colour,[chernov,black])),
     not(in_list(Hair_colour,[ryzhov,redhead])),
     write(Hair_colour),!.
+
+%15 zadaniye
+task15:-
+    Look = [_,_,_],
+    in_list(Look,[Natasha,_,green]),
+    in_list(Look,[Anya,X,X]),
+    in_list(Look,[Valya,_,_]),
+    in_list(Look,[_,white,_]),
+    in_list(Look,[_,green,_]),
+    in_list(Look,[_,blue,_]),
+    in_list(Look,[_,_,white]),
+    in_list(Look,[_,_,green]),
+    in_list(Look,[_,_,blue]),
+    not(in_list(Look,[Valya,white,_])),
+    not(in_list(Look,[Valya,_,white])),
+    not(in_list(Look,[Valya,Y,Y])),
+    not(in_list(Look,[Natasha,Z,Z])),
+    write(Look),!.

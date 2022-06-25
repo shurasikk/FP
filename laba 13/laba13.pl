@@ -1,4 +1,4 @@
- readlist(X,Y):-readlist([],X,0,Y).
+readlist(X,Y):-readlist([],X,0,Y).
 readlist(A,A,G,G):-!.
 readlist(A,B,C,D):- C1 is C+1,read(X),append(A,[X],A1),readlist(A1,B,C1,D).
 
@@ -58,3 +58,21 @@ task14:-
     not(in_list(Hair_colour,[chernov,black])),
     not(in_list(Hair_colour,[ryzhov,redhead])),
     write(Hair_colour),!.
+
+%15 zadaniye
+task15:-
+    Look = [_,_,_],
+    in_list(Look,[natasha,_,green]),
+    in_list(Look,[anya,X,X]),
+    in_list(Look,[valya,_,_]),
+    in_list(Look,[_,white,_]),
+    in_list(Look,[_,green,_]),
+    in_list(Look,[_,blue,_]),
+    in_list(Look,[_,_,white]),
+    in_list(Look,[_,_,green]),
+    in_list(Look,[_,_,blue]),
+    not(in_list(Look,[valya,white,_])),
+    not(in_list(Look,[valya,_,white])),
+    not(in_list(Look,[valya,Y,Y])),
+    not(in_list(Look,[natasha,Z,Z])),
+    write(Look),!.
