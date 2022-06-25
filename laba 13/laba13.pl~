@@ -88,9 +88,9 @@ task16:-
     in_list(Friends,[_,semenov,older]),
     not(in_list(Friends,[slesar,_,older])),
     not(in_list(Friends,[slesar,_,has_sibling])),
-    in_list(Friends,[Name1,slesar,_,_]),
-    in_list(Friends,[Name2,tokar,_,_]),
-    in_list(Friends,[Name3,svar,_,_]),
+    in_list(Friends,[slesar,Name1,_]),
+    in_list(Friends,[tokar,Name2,_]),
+    in_list(Friends,[svar,Name3,_]),
     write("Слесарь - "), write(Name1),nl,
     write("Токарь - "), write(Name2), nl,
     write("Сварщик - "),write(Name3),!.

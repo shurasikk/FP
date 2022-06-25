@@ -94,3 +94,37 @@ task16:-
     write("Слесарь - "), write(Name1),nl,
     write("Токарь - "), write(Name2), nl,
     write("Сварщик - "),write(Name3),!.
+
+%17 zadaniye
+sprava_next(A,B,[C]):-fail.
+sprava_next(A,B,[A|[B|Tail]]).
+sprava_next(A,B,[_|List]):-sprava_next(A,B,List).
+
+sleva_next(A,B,[C]):-fail.
+sleva_next(A,B,[B|[A|Tail]]).
+sleva_next(A,B,[_|List]):-sleva_next(A,B,List).
+
+between(List,X,Y,Z):-sleva_next(X,Y,List),sprava_next(Z,Y,List);
+sleva_next(Z,Y,List),sprava_next(X,Y,List).
+
+near(List,X,Y):-sprava_next(Y,X,List).
+near(List,X,Y):-sleva_next(Y,X,List).
+
+task17:-
+    Drinks = [_,_,_,_],
+    in_list(Drinks,[bottle,_]),
+    in_list(Drinks,[glass,_]),
+    in_list(Drinks,[jug,_]),
+    in_list(Drinks,[jar,_]),
+    in_list(Drinks,[_,milk]),
+    in_list(Drinks,[_,lemonade]),
+    in_list(Drinks,[_,kvas]),
+    in_list(Drinks,[_,water]),
+    not(in_list(Drinks,[bottle,milk])),
+    not(in_list(Drinks,[bottle,water])),
+    not(in_list(Drinks,[jar,lemonade])),
+    not(in_list(Drinks,[jar,water])),
+    between(Drinks,[jug,_],[_,limonad],[_,kvas]),
+    near(Drinks,[glass,_],[jar,_]),
+    near(Drinks,[glass,_],[_,milk]),
+    write(Drinks),!.
