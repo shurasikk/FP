@@ -1,0 +1,10 @@
+true
+true
+false
+fail
+flase
+false
+false
+true
+false
+fail

@@ -135,3 +135,32 @@ print_greater([H|T],Av):-a_count(H,C),(C>Av,write_str(H),nl;true),print_greater(
 task2_3:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.3.txt'),
     read_list_str(List,_),seen, a_list_count(List,CntList),average(CntList,Av),
     print_greater(List,Av),!.
+
+%2.4 zadaniye
+read_all_str(S,N):-get0(X),r_a_str(S,N,0,[],X).
+r_a_str(S,N,N,S,-1):-!.
+r_a_str(S,N,K,TS,10):-NewK is K,append(TS,[32],NewTS),get0(NewX),
+	r_a_str(S,N,NewK,NewTS,NewX).
+r_a_str(S,N,K,TS,X):-NewK is K + 1,append(TS,[X],NewTS),get0(NewX),
+	r_a_str(S,N,NewK,NewTS,NewX).
+
+
+task2_4:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.4.txt'),
+    read_all_str(S,_),seen,get_words(S,S1),count_list(S1,Ans),
+    find_max(Ans,Max),write_str(Max),!.
+
+%2.5 zadaniye
+check_unique(List,El):-in_list_exclude(List,El,W),not(in_list(W,El)),!.
+
+line_unique([],_):-!.
+line_unique([H|T],WordList):-check_unique(WordList,H),line_unique(T,WordList).
+
+check_line(Line,Words):-get_words(Line,WList),line_unique(WList,Words).
+
+check_all_lines([],_):-!.
+check_all_lines([H|T],Words):-(check_line(H,Words),write_str(H);true),
+	check_all_lines(T,Words).
+
+task2_5:-see('F:/PROLOG/2_5.txt'),read_list_str(List,_),seen,!,
+		 see('F:/PROLOG/2_5.txt'),read_all_str(WList,_),seen,!,
+		 get_words(WList,Words),check_all_lines(List,Words),!.
