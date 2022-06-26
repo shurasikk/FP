@@ -96,12 +96,12 @@ task16:-
     write("Сварщик - "),write(Name3),!.
 
 %17 zadaniye
-sprava_next(A,B,[C]):-fail.
-sprava_next(A,B,[A|[B|Tail]]).
+sprava_next(_,_,[_]):-fail.
+sprava_next(A,B,[A,B|_]).
 sprava_next(A,B,[_|List]):-sprava_next(A,B,List).
 
-sleva_next(A,B,[C]):-fail.
-sleva_next(A,B,[B|[A|Tail]]).
+sleva_next(_,_,[_]):-fail.
+sleva_next(A,B,[B,A|_]).
 sleva_next(A,B,[_|List]):-sleva_next(A,B,List).
 
 between(List,X,Y,Z):-sleva_next(X,Y,List),sprava_next(Z,Y,List);
@@ -124,7 +124,23 @@ task17:-
     not(in_list(Drinks,[bottle,water])),
     not(in_list(Drinks,[jar,lemonade])),
     not(in_list(Drinks,[jar,water])),
-    between(Drinks,[jug,_],[_,limonad],[_,kvas]),
+    between(Drinks,[jug,_],[_,lemonade],[_,kvas]),
     near(Drinks,[glass,_],[jar,_]),
     near(Drinks,[glass,_],[_,milk]),
     write(Drinks),!.
+
+%18 zadaniye
+task18:-
+    Artists = [_,_,_,_],
+    in_list(Artists,[voronov,_]),
+    in_list(Artists,[levitskiy,writer]),
+    in_list(Artists,[pavlov,_]),
+    in_list(Artists,[saharov,_]),
+    in_list(Artists,[_,dancer]),
+    in_list(Artists,[_,painter]),
+    in_list(Artists,[_,singer]),
+    not(in_list(Artists,[voronov,singer])),
+    not(in_list(Artists,[pavlov,painter])),
+    not(in_list(Artists,[voronov,painter])),
+    write(Artists),!.
+
