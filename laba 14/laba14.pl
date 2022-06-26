@@ -22,6 +22,10 @@ r_l_s(List,List_len,Cur_list,Cur_list_len,_):-
 write_str([]):-!.
 write_str([H|Tail]):-put(H),write_str(Tail).
 
+in_list([],_):-fail.
+in_list([H|_],H).
+in_list([_|T],El):-in_list(T,El).
+
 in_list_exclude([H|T],H,T).
 in_list_exclude([H|T],El,[H|Tail]):-in_list_exclude(T,El,Tail).
 
@@ -99,4 +103,13 @@ max_lenght([H|T],Ans):-lenght(H,L),max_lenght(T,L,H,Ans).
 
 task2_1:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.1.txt'),
     read_list_str(List,_),seen,max_lenght(List,Ans),length(Ans,N),write(N),!.
+
+%2.2 zadaniye
+final_check([],V,V):-!.
+final_check([H|T],N,Ans):-(not(in_list(H,32)),N1 is N+1,!;N1 is N),
+    final_check(T,N1,Ans).
+final_check(List,Ans):-final_check(List,0,Ans).
+
+task2_2:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.2.txt'),
+    read_list_str(List,_),seen,final_check(List,N),write(N),nl,!.
 
