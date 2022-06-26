@@ -48,4 +48,14 @@ find_max([[H1,H2]|T],Out):-find_max(T,H2,H1,Out),!.
 
 task1_3:-write('Write your string: '),read_str(S,_),get_words(S,S1),count_list(S1,Out),find_max(Out,MAX),write_str(MAX).
 
+%1.4 zadaniye
+first_three([H1,H2,H3|_]):-put(H1),put(H2),put(H3),nl,!.
+
+last_three([H1,H2,H3|[]]):-put(H1),put(H2),put(H3),nl,!.
+last_three([_|T]):-last_three(T).
+
+put_n(_,0):-!.
+put_n([H|T],N):-N1 is N-1,put(H),put_n([H|T],N1).
+
+task1_4:-write('Write your string: '),read_str(S,N),(N>5,(first_three(S),last_three(S)),!;put_n(S,N)).
 
