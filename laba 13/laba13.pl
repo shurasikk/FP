@@ -144,3 +144,16 @@ task18:-
     not(in_list(Artists,[voronov,painter])),
     write(Artists),!.
 
+%19 zadaniye
+task19:-
+    Sportsman=[_,_,_],
+    in_list(Sportsman,[michael,_,basketball,2]),
+    in_list(Sportsman,[_,american,_,3]),
+    in_list(Sportsman,[saimon,israeli,_,_]),
+    in_list(Sportsman,[_,_,cricket,1]),
+    in_list(Sportsman,[Name,australian,_,_]),
+    in_list(Sportsman,[richard,_,Sport,_]),
+    in_list(Sportsman,[_,_,tennis,_]),
+    write("Australian is "), write(Name), nl,
+    write("Richard sport - "), write(Sport),!.
+

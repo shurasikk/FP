@@ -140,8 +140,35 @@ task18:-
     in_list(Artists,[_,painter]),
     in_list(Artists,[_,singer]),
     not(in_list(Artists,[voronov,singer])),
-    not(in_list(Artists,[levitskiy,singer])),
     not(in_list(Artists,[pavlov,painter])),
     not(in_list(Artists,[voronov,painter])),
     write(Artists),!.
+
+%19 zadaniye
+task19:-
+    Sportsman=[_,_,_],
+    in_list(Sportsman,[michael,_,basketball,2]),
+    in_list(Sportsman,[_,american,_,3]),
+    in_list(Sportsman,[saimon,israeli,_,_]),
+    in_list(Sportsman,[_,_,cricket,1]),
+    in_list(Sportsman,[Name,australian,_,_]),
+    in_list(Sportsman,[richard,_,Sport,_]),
+    in_list(Sportsman,[_,_,tennis,_]),
+    write("Australian is "), write(Name), nl,
+    write("Richard sport - "), write(Sport),!.
+zad19:- Friends=[_,_,_],
+  in_list(Friends,[michael,_,bb,_]),
+  in_list(Friends,[simon,israel,_,_]),
+  in_list(Friends,[richard,_,_,_]),
+  in_list(Friends,[_,american,_,_]),
+  in_list(Friends,[_,australian,_,_]),
+  in_list(Friends,[_,_,cricket,first]),
+  in_list(Friends,[_,_,tennis,_]),
+  in_list(Friends,[_,_,_,second]),
+  in_list(Friends,[_,_,_,third]),
+  not(in_list(Friends,[michael,american,_,_])),
+  not(in_list(Friends,[simon,_,tennis,_])),
+  not(in_list(Friends,[michael,_,_,third])),
+  not(in_list(Friends,[simon,_,_,third])),
+  write(Friends),nl,!.
 
