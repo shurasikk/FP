@@ -4,6 +4,21 @@ r_str(-1,A,A,N,N,1):-!.
 r_str(10,A,A,N,N,0):-!.
 r_str(X,A,B,N,K,Flag):-K1 is K+1,append(B,[X],B1),get0(X1),r_str(X1,A,B1,N,K1,Flag).
 
+read_str_f(A,N,Flag):-get0(X),r_str_f(X,A,[],N,0,Flag).
+r_str_f(-1,A,A,N,N,0):-!.
+r_str_f(10,A,A,N,N,1):-!.
+r_str_f(X,A,B,N,K,Flag):-K1 is K+1,append(B,[X],B1),get0(X1),r_str_f(X1,A,B1,N,K1,Flag).
+
+lenght([],C,V):-V is C.
+lenght([_|T],C,V):-C1 is C+1,lenght(T,C1,V).
+lenght([H|T],V):-lenght([H|T],0,V).
+
+read_list_str(List,List_len):-read_str_f(A,N,Flag),r_l_s(List,List_len,[A],[N],Flag).
+r_l_s(List,List_len,List,List_len,0):-!.
+r_l_s(List,List_len,Cur_list,Cur_list_len,_):-
+	read_str_f(A,N,Flag),append(Cur_list,[A],C_l),
+        append(Cur_list_len,[N],C_l_l),r_l_s(List,List_len,C_l,C_l_l,Flag).
+
 write_str([]):-!.
 write_str([H|Tail]):-put(H),write_str(Tail).
 
@@ -73,4 +88,15 @@ prnt([H|T]):-write(H),write(' '),prnt(T).
 
 task1_5:-write('Write your string: '),read_str(S,_),last(S,M),
     indexed(S,M,N),prnt(N),!.
+
+%2.1 zadaniye
+
+max_lenght([],_,S,S):-!.
+max_lenght([H|T],M,MaxStr,Ans):-lenght(H,V),
+    (V>M,M1 is V,M2 = H;M1 is M,M2 = MaxStr),
+    max_lenght(T,M1,M2,Ans).
+max_lenght([H|T],Ans):-lenght(H,L),max_lenght(T,L,H,Ans).
+
+task2_1:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.1.txt'),
+    read_list_str(List,_),seen,max_lenght(List,Ans),length(Ans,N),write(N),!.
 
