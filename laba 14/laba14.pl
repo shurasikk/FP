@@ -190,10 +190,17 @@ unique_digit(X,List,N):-X1 is X div 10,Tmp is X mod 10,
 unique_digit(X,N):-unique_digit(X,[],N),!.
 
 %zadaniye 6.1
-place_w(_,0,S,S):-!.
-place_w(A,N,S,P):-in_list(A,El),N1 is N-1,place_w(A,N1,[El|S],P).
-place_w(A,N,P):-place_w(A,N,[],P),write(P),nl,!,fail.
+r_p(List,K):- r_p(List,K,[],Ans), write(Ans), nl, fail.
+r_p(_,0,Ans,Ans):-!.
+r_p(List,K,Res,Ans):- in_list(List,X), K1 is K - 1,
+	r_p(List,K1,[X|Res],Ans).
+task6_1:- tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/r_p.txt'),
+	not(r_p([1,2,3,4],4)),told.
+%zadaniye 6.2
 
-task6_1(K):-read_str(S,_),
-	tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/razmrep.txt'),
-	place_w(S,K,P),told,!.
+perm([],S,S):-!.
+perm(A,S,P):-in_list_exclude(A,El,A1),perm(A1,[El|S],P).
+perm(A,P):-perm(A,[],P),write(P),nl,fail.
+task6_2:-
+	tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/permute.txt'),
+	not(perm([1,2,3],P)),told,!.
