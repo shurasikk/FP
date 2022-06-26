@@ -59,3 +59,18 @@ put_n([H|T],N):-N1 is N-1,put(H),put_n([H|T],N1).
 
 task1_4:-write('Write your string: '),read_str(S,N),(N>5,(first_three(S),last_three(S)),!;put_n(S,N)).
 
+%1.5 zadaniye
+last([H|[]],H).
+last([_|T],S):-last(T,S).
+
+indexed([],_,_,[]).
+indexed([H|T],H,I,[I|T2]):-I1 is I+1,indexed(T,H,I1,T2).
+indexed([_|T],El,I,T2):-I1 is I+1,indexed(T,El,I1,T2).
+indexed(List,El,Ans):-indexed(List,El,0,Ans),!.
+
+prnt([]):-nl,!.
+prnt([H|T]):-write(H),write(' '),prnt(T).
+
+task1_5:-write('Write your string: '),read_str(S,_),last(S,M),
+    indexed(S,M,N),prnt(N),!.
+
