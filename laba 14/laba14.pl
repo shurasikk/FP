@@ -167,4 +167,13 @@ task2_5:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.5.txt'),
 		 read_all_str(WList,_),seen,!,
 		 get_words(WList,Words),
 		 tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.5test.txt'),
-		 check_all_lines(List,Words),told.
+		 check_all_lines(List,Words),told,!.
+%zadaniye 3 (4)
+reverse(List,Ans):- reverse(List,Ans,[]).
+reverse([],CurList,CurList):-!.
+reverse([H|T],Ans,CurList):- reverse(T,Ans,[H|CurList]).
+
+palyndrom(List):-reverse(List,Rlist),List=Rlist,!.
+
+task3_4:-write('Write your string: '),read_str(S,_),palyndrom(S),!.
+
