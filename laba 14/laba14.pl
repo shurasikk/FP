@@ -158,9 +158,13 @@ line_unique([H|T],WordList):-check_unique(WordList,H),line_unique(T,WordList).
 check_line(Line,Words):-get_words(Line,WList),line_unique(WList,Words).
 
 check_all_lines([],_):-!.
-check_all_lines([H|T],Words):-(check_line(H,Words),write_str(H);true),
+check_all_lines([H|T],Words):-(check_line(H,Words),write_str(H),nl;true),
 	check_all_lines(T,Words).
 
-task2_5:-see('F:/PROLOG/2_5.txt'),read_list_str(List,_),seen,!,
-		 see('F:/PROLOG/2_5.txt'),read_all_str(WList,_),seen,!,
-		 get_words(WList,Words),check_all_lines(List,Words),!.
+task2_5:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.5.txt'),
+	read_list_str(List,_),seen,!,
+		 see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.5.txt'),
+		 read_all_str(WList,_),seen,!,
+		 get_words(WList,Words),
+		 tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.5test.txt'),
+		 check_all_lines(List,Words),told.

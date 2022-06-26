@@ -148,3 +148,23 @@ r_a_str(S,N,K,TS,X):-NewK is K + 1,append(TS,[X],NewTS),get0(NewX),
 task2_4:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.4.txt'),
     read_all_str(S,_),seen,get_words(S,S1),count_list(S1,Ans),
     find_max(Ans,Max),write_str(Max),!.
+
+%2.5 zadaniye
+check_unique(List,El):-in_list_exclude(List,El,W),not(in_list(W,El)),!.
+
+line_unique([],_):-!.
+line_unique([H|T],WordList):-check_unique(WordList,H),line_unique(T,WordList).
+
+check_line(Line,Words):-get_words(Line,WList),line_unique(WList,Words).
+
+check_all_lines([],_):-!.
+check_all_lines([H|T],Words):-(check_line(H,Words),write_str(H);true),
+	check_all_lines(T,Words).
+
+task2_5:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.5.txt'),
+	read_list_str(List,_),seen,!,
+		 see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.5.txt'),
+		 read_all_str(WList,_),seen,!,
+		 get_words(WList,Words),
+		 tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.5test.txt'),
+		 check_all_lines(List,Words),told.
