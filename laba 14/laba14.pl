@@ -42,7 +42,8 @@ count_words([_|T],N,true,V):-count_words(T,N,true,V).
 count_words([32|T],N):-count_words(T,N).
 count_words([_|T],N):-count_words(T,1,true,N).
 
-task1_2:- write('Write your string: '),read_str(S,_),count_words(S,N),write(N),!,nl.
+task1_2:- write('Write your string: '),read_str(S,_),count_words(S,N),
+	write(N),!,nl.
 
 %1.3 zadaniye
 
@@ -176,4 +177,8 @@ reverse([H|T],Ans,CurList):- reverse(T,Ans,[H|CurList]).
 palyndrom(List):-reverse(List,Rlist),List=Rlist,!.
 
 task3_4:-write('Write your string: '),read_str(S,_),palyndrom(S),!.
+
+%zadaniye 4 (11)
+task4_11:-write('Write your string: '),read_str(S,_),count_words(S,N),
+	write(N),!,nl.
 

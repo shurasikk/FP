@@ -173,5 +173,7 @@ reverse(List,Ans):- reverse(List,Ans,[]).
 reverse([],CurList,CurList):-!.
 reverse([H|T],Ans,CurList):- reverse(T,Ans,[H|CurList]).
 
-palyndrom(List):-reverse(List,Tsil),List=Tsil.
+palyndrom(List):-reverse(List,Rlist),List=Rlist,!.
+
+task3_4:-write('Write your string: '),read_str(S,_),palyndrom(S),!.
 
