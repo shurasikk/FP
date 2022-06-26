@@ -204,3 +204,10 @@ perm(A,P):-perm(A,[],P),write(P),nl,fail.
 task6_2:-
 	tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/permute.txt'),
 	not(perm([1,2,3],P)),told,!.
+
+%zadaniye 6.3
+razm(_,Perm1,0):-write(Perm1),nl,!,fail.
+razm(A,Perm,K):-in_list_exclude(A,El,A1),K1 is K-1,
+				razm(A1,[El|Perm],K1).
+
+task6_3:-tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/razm.txt'),not(razm([1,2,3,4,5],Razm,3)),told.

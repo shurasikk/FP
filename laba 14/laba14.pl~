@@ -193,7 +193,7 @@ unique_digit(X,N):-unique_digit(X,[],N),!.
 r_p(List,K):- r_p(List,K,[],Ans), write(Ans), nl, fail.
 r_p(_,0,Ans,Ans):-!.
 r_p(List,K,Res,Ans):- in_list(List,X), K1 is K - 1,
-	razmeshP(List,K1,[X|Res],Ans).
+	r_p(List,K1,[X|Res],Ans).
 task6_1:- tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/r_p.txt'),
 	not(r_p([1,2,3,4],4)),told.
 %zadaniye 6.2
@@ -204,3 +204,10 @@ perm(A,P):-perm(A,[],P),write(P),nl,fail.
 task6_2:-
 	tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/permute.txt'),
 	not(perm([1,2,3],P)),told,!.
+
+%zadaniye 6.3
+razm(_,Perm1,0):-write_str(Perm1),nl,!,fail.
+razm(A,Perm,K):-in_list_exclude(A,El,A1),K1 is K-1,
+				razm(A1,[El|Perm],K1).
+
+task6_3:-tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/razm.txt'),not(razm([1,2,3,4,5],Razm,3)),told.
