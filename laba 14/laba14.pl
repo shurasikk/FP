@@ -182,3 +182,10 @@ task3_4:-write('Write your string: '),read_str(S,_),palyndrom(S),!.
 task4_11:-write('Write your string: '),read_str(S,_),count_words(S,N),
 	write(N),!,nl.
 
+%zadaniye 5 (15)
+unique_digit(0,List,N):-lenght(List,N).
+unique_digit(X,List,N):-X1 is X div 10,Tmp is X mod 10,
+	(not(in_list(List,Tmp)),List1 = [Tmp|List];List1 = List),
+	unique_digit(X1,List1,N).
+unique_digit(X,N):-unique_digit(X,[],N),!.
+
