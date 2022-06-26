@@ -220,3 +220,11 @@ subset(List):-subset(List,Ans),write(Ans),nl,fail.
 
 task6_4:-tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/subset.txt'),
 	not(subset([1,2,3,4])),told.
+
+%zadaniye 6.5
+sochet(List,K):- sochet(List,K,Ans), write(Ans),nl,fail.
+sochet(_,0,[]):-!.
+sochet([H|T], K, [H|T2]):- K1 is K-1, sochet(T,K1,T2).
+sochet([_|TAIL],K,ANSWER):- sochet(TAIL,K,ANSWER).
+task6_5:- tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/sochet.txt'),
+	not(sochet([1,2,3,4,5],3)),told.

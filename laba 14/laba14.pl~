@@ -214,8 +214,8 @@ task6_3:-tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/razm.txt'),not(razm([1,
 
 %zadaniye 6.4
 subset([],[]):-!.
-subset([H|Sub],[H|Set]):-subset(Sub,Set).
-subset(Sub,[_|Set]):-subset(Sub,Set).
+subset([H|T],[H|T2]):-subset(T,T2).
+subset([_|T],Ans):-subset(T,Ans).
 subset(List):-subset(List,Ans),write(Ans),nl,fail.
 
 task6_4:-tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/subset.txt'),
