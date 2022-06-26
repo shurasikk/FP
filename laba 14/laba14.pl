@@ -189,3 +189,11 @@ unique_digit(X,List,N):-X1 is X div 10,Tmp is X mod 10,
 	unique_digit(X1,List1,N).
 unique_digit(X,N):-unique_digit(X,[],N),!.
 
+%zadaniye 6.1
+place_w(_,0,S,S):-!.
+place_w(A,N,S,P):-in_list(A,El),N1 is N-1,place_w(A,N1,[El|S],P).
+place_w(A,N,P):-place_w(A,N,[],P),write(P),nl,!,fail.
+
+task6_1(K):-read_str(S,_),
+	tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/razmrep.txt'),
+	place_w(S,K,P),told,!.
