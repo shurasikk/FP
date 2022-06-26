@@ -106,10 +106,32 @@ task2_1:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.1.txt'),
 
 %2.2 zadaniye
 final_check([],V,V):-!.
-final_check([H|T],N,Ans):-not(in_list(H,32)),N1 is N+1,!;N1 is N),
+final_check([H|T],N,Ans):-(not(in_list(H,32)),N1 is N+1,!;N1 is N),
     final_check(T,N1,Ans).
 final_check(List,Ans):-final_check(List,0,Ans).
 
 task2_2:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.2.txt'),
     read_list_str(List,_),seen,final_check(List,N),write(N),nl,!.
 
+%2.3 zadaniye
+sum([],S,S):-!.
+sum([H|T],S,Ans):-S1 is S + H,sum(T,S1,Ans).
+sum(List,Sum):-sum(List,0,Sum).
+
+average(List,Out):-length(List,L),sum(List,S),Out is S div L.
+
+a_count([],V,V):-!.
+a_count([97|T],N,Ans):-N1 is N+1,a_count(T,N1,Ans).
+a_count([65|T],N,Ans):-N1 is N+1,a_count(T,N1,Ans).
+a_count([_|T],N,Ans):-a_count(T,N,Ans).
+a_count(List,Ans):-a_count(List,0,Ans),!.
+
+a_list_count([],[]):-!.
+a_list_count([H|T],[H2|T2]):-a_count(H,C),H2 is C,a_list_count(T,T2).
+
+print_greater([],_).
+print_greater([H|T],Av):-a_count(H,C),(C>Av,write_str(H);true),print_greater(T,Av).
+
+task2_3:-see('C:/Users/Asus/Documents/GitHub/FP/laba 14/2.3.txt'),
+    read_list_str(List,_),seen, a_list_count(List,CntList),average(CntList,Av),
+    print_greater(List,Av),!.
