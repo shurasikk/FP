@@ -8,4 +8,16 @@ write_str([]):-!.
 write_str([H|Tail]):-put(H),write_str(Tail).
 
 %1.1 zadaniye
-task1_1 :- write('Input string: '), read_str(Str, Len), write_str(Str), write(', '), write_str(Str), write(', '), write_str(Str), nl, write('Length: '), write(Len).
+task1_1 :- write('Write your string: '), read_str(Str, Len), write_str(Str),
+    write(', '), write_str(Str), write(', '), write_str(Str), nl, write('Length: '), write(Len).
+
+%1.2 zadaniye
+count_words([],N,_,N):-!.
+count_words([32|T],N,false,V):-count_words(T,N,false,V).
+count_words([_|T],N,false,V):-N1 is N+1,count_words(T,N1,true,V).
+count_words([32|T],N,true,V):-count_words(T,N,false,V).
+count_words([_|T],N,true,V):-count_words(T,N,true,V).
+count_words([32|T],N):-count_words(T,N).
+count_words([_|T],N):-count_words(T,1,true,N).
+
+task1_2:- write('Write your string: '),read_str(S,_),count_words(S,N),write(N),!,nl.
