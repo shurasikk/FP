@@ -206,8 +206,17 @@ task6_2:-
 	not(perm([1,2,3],P)),told,!.
 
 %zadaniye 6.3
-razm(_,Perm1,0):-write_str(Perm1),nl,!,fail.
+razm(_,Perm1,0):-write(Perm1),nl,!,fail.
 razm(A,Perm,K):-in_list_exclude(A,El,A1),K1 is K-1,
 				razm(A1,[El|Perm],K1).
 
 task6_3:-tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/razm.txt'),not(razm([1,2,3,4,5],Razm,3)),told.
+
+%zadaniye 6.4
+subset([],[]):-!.
+subset([H|Sub],[H|Set]):-subset(Sub,Set).
+subset(Sub,[_|Set]):-subset(Sub,Set).
+subset(List):-subset(List,Ans),write(Ans),nl,fail.
+
+task6_4:-tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/subset.txt'),
+	not(subset([1,2,3,4])),told.

@@ -211,3 +211,12 @@ razm(A,Perm,K):-in_list_exclude(A,El,A1),K1 is K-1,
 				razm(A1,[El|Perm],K1).
 
 task6_3:-tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/razm.txt'),not(razm([1,2,3,4,5],Razm,3)),told.
+
+%zadaniye 6.4
+subset([],[]):-!.
+subset([H|T],[H|T2]):-subset(T,T2).
+subset([_|T],Ans):-subset(T,Ans).
+subset(List):-subset(List,Ans),write(Ans),nl,fail.
+
+task6_4:-tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/subset.txt'),
+	not(subset([1,2,3,4])),told.
