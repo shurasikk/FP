@@ -228,3 +228,11 @@ sochet([H|T], K, [H|T2]):- K1 is K-1, sochet(T,K1,T2).
 sochet([_|TAIL],K,ANSWER):- sochet(TAIL,K,ANSWER).
 task6_5:- tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/sochet.txt'),
 	not(sochet([1,2,3,4,5],3)),told.
+
+%zadaniye 6.6
+s_P(List,K):- s_P(List,K,Ans), write(Ans),nl,fail.
+s_P(_,0,[]):-!.
+s_P([H|T], K, [H|T2]):- K1 is K - 1, s_P([H|T],K1,T2).
+s_P([_|T],K,Ans):- s_P(T,K,Ans).
+task6_6:- tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/s_p.txt'),
+	not(s_P([1,2,3,4,5],3)),told.
