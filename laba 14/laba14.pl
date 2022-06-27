@@ -290,6 +290,31 @@ task8File:-
     not(task8),
     told.
 
+%zadaniye 9
+task9:-
+    WORD=[_,_,_,_,_],
+    sochet([a,b,c,d,e,f],1,[A]),
+    in_list_exclude([a,b,c,d,e,f],A,T1),
 
+    sochet([0,1,2,3,4],2,[IA1,IA2]),
+
+    index_ed(WORD,IA1,A),
+    index_ed(WORD,IA2,A),
+
+    in_list_exclude([0,1,2,3,4],IA1,T2),
+    in_list_exclude(T2,IA2,[I1,I2,I3]),
+
+    razm(T1,3,[],[X1,X2,X3]),
+
+    index_ed(WORD, I1, X1),
+    index_ed(WORD, I2, X2),
+    index_ed(WORD, I3, X3),
+
+    write_str(WORD), nl, fail.
+
+task9File:-
+    tell('C:/Users/Asus/Documents/GitHub/FP/laba 14/9.txt'),
+    not(task9),
+    told.
 
 
